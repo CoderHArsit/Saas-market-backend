@@ -4,6 +4,7 @@ import helmet from 'helmet';
 import morgan from 'morgan';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
+import securityMiddleware from '#middleware/security.middleware.js'
 
 import router from '#routes/auth.routes.js';
 
@@ -14,6 +15,7 @@ app.use(cors());
 app.use(express.json()); // ✅ fixed
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
+// app.use(securityMiddleware) have to fix this
 app.use(
   morgan('combined', {
     stream: { write: message => logger.info(message.trim()) },

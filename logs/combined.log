@@ -26,3 +26,5 @@
 {"level":"info","message":"User authenticated successfully: harshit@todaypay.me","service":"saas_market_place_api","timestamp":"2025-10-01 17:24:25"}
 {"level":"info","message":"User signed in successfully: harshit@todaypay.me","service":"saas_market_place_api","timestamp":"2025-10-01 17:24:25"}
 {"level":"info","message":"::1 - - [01/Oct/2025:11:54:25 +0000] \"POST /api/auth/sign-in HTTP/1.1\" 200 105 \"-\" \"PostmanRuntime/7.48.0\"","service":"saas_market_place_api","timestamp":"2025-10-01 17:24:25"}
+{"level":"info","message":"Hello from Saas market place","service":"saas_market_place_api","timestamp":"2025-10-01 17:49:47"}
+{"level":"info","message":"::1 - - [01/Oct/2025:12:19:47 +0000] \"GET / HTTP/1.1\" 200 27 \"-\" \"PostmanRuntime/7.48.0\"","service":"saas_market_place_api","timestamp":"2025-10-01 17:49:47"}
