@@ -3,13 +3,13 @@ import winston from 'winston';
 const logger = winston.createLogger({
   level: process.env.LOG_LEVEL || 'info',
   format: winston.format.combine(
-    (winston.format.timestamp(),
+    winston.format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
     winston.format.errors({ stack: true }),
-    winston.format.json())
+    winston.format.json()
   ),
-  defaultMeta: { sevice: 'saas_market_place_api' },
+  defaultMeta: { service: 'saas_market_place_api' },
   transports: [
-    new winston.transports.File({ filename: 'logs/error.lg', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
     new winston.transports.File({ filename: 'logs/combined.log' }),
   ],
 });
@@ -18,11 +18,11 @@ if (process.env.NODE_ENV !== 'production') {
   logger.add(
     new winston.transports.Console({
       format: winston.format.combine(
-        winston.colorize(),
+        winston.format.colorize(),   // ✅ fixed
         winston.format.simple()
       ),
     })
   );
 }
 
-export default logger
+export default logger;

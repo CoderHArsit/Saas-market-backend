@@ -1,0 +1,6 @@
+{"level":"info","message":"Hello from Saas market place","service":"saas_market_place_api","timestamp":"2025-10-01 16:12:04"}
+{"level":"info","message":"::1 - - [01/Oct/2025:10:42:04 +0000] \"GET / HTTP/1.1\" 200 27 \"-\" \"PostmanRuntime/7.48.0\"","service":"saas_market_place_api","timestamp":"2025-10-01 16:12:04"}
+{"level":"info","message":"::1 - - [01/Oct/2025:10:42:12 +0000] \"GET /health HTTP/1.1\" 200 76 \"-\" \"PostmanRuntime/7.48.0\"","service":"saas_market_place_api","timestamp":"2025-10-01 16:12:12"}
+{"level":"info","message":"::1 - - [01/Oct/2025:10:42:27 +0000] \"GET /api HTTP/1.1\" 200 47 \"-\" \"PostmanRuntime/7.48.0\"","service":"saas_market_place_api","timestamp":"2025-10-01 16:12:27"}
+{"level":"info","message":"::1 - - [01/Oct/2025:10:42:50 +0000] \"POST /api/auth/signin HTTP/1.1\" 404 155 \"-\" \"PostmanRuntime/7.48.0\"","service":"saas_market_place_api","timestamp":"2025-10-01 16:12:50"}
+{"level":"info","message":"::1 - - [01/Oct/2025:10:42:55 +0000] \"POST /api/auth/sign-in HTTP/1.1\" 200 31 \"-\" \"PostmanRuntime/7.48.0\"","service":"saas_market_place_api","timestamp":"2025-10-01 16:12:55"}
