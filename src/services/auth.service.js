@@ -48,3 +48,36 @@ export const createUser = async ({ name, email, password, role = 'user' }) => {
     throw e;
   }
 };
+
+export const authUser = async ({ email, password }) => {
+  try {
+    const result = await db
+      .select()
+      .from(users)
+      .where(eq(users.email, email))
+      .limit(1);
+
+    if (result.length === 0) {
+      logger.warn(`No user found with email: ${email}`);
+      return null; 
+    }
+
+    const user = result[0];
+
+    // Compare hashed password
+    const isMatch = await bcrypt.compare(password, user.password);
+    if (!isMatch) {
+      logger.warn(`Invalid password attempt for email: ${email}`);
+      return null; 
+    }
+
+    // Exclude password before returning
+    const { password: _, ...safeUser } = user;
+
+    logger.info(`User authenticated successfully: ${email}`);
+    return safeUser;
+  } catch (e) {
+    logger.error(`Error authenticating user: ${e}`);
+    throw e;
+  }
+};
